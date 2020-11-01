@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCostaAssignment2", "PCostaAssignment2\PCostaAssignment2.csproj", "{15C0CA8A-F27E-418F-B8D6-748C8F3CAC28}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15C0CA8A-F27E-418F-B8D6-748C8F3CAC28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15C0CA8A-F27E-418F-B8D6-748C8F3CAC28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15C0CA8A-F27E-418F-B8D6-748C8F3CAC28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15C0CA8A-F27E-418F-B8D6-748C8F3CAC28}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BFC0C960-8495-4034-85E2-7D4CFE2BB336}
+	EndGlobalSection
+EndGlobal
