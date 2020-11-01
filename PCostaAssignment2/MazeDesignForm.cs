@@ -61,7 +61,8 @@ namespace PCostaAssignment2
                         Image = imgNone,
                         BorderStyle = BorderStyle.FixedSingle,
                         Name = "pictureBox" + j.ToString() + ", " + i.ToString(),
-                        SizeMode = PictureBoxSizeMode.StretchImage
+                        SizeMode = PictureBoxSizeMode.StretchImage,
+                        Cursor = Cursors.Hand
                         
                     };
 
@@ -95,17 +96,6 @@ namespace PCostaAssignment2
         {
             chosenTool = Properties.Resources.None;
             isPictureChosen = true;
-        }
-        private void pnlMaze_Click(object sender, EventArgs e)
-        {
-            Point point = Control.MousePosition;
-            
-            //if(isMazeGenerated == true && isPictureChosen == true)
-            //{
-            //    PictureBox pictureClicked = sender as PictureBox;
-            //    MessageBox.Show(pictureClicked.Name + "clicked");
-            //}
-
         }
 
         private void pbxWall_Click(object sender, EventArgs e)

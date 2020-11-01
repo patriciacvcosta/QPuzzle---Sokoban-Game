@@ -190,7 +190,7 @@
             // 
             // panel8
             // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel8.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel8.Controls.Add(this.pbxGreenBox);
             this.panel8.Controls.Add(this.label9);
@@ -225,7 +225,7 @@
             // 
             // panel7
             // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel7.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel7.Controls.Add(this.pbxRedBox);
             this.panel7.Controls.Add(this.label8);
@@ -260,7 +260,7 @@
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel6.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel6.Controls.Add(this.pbxGreenDoor);
             this.panel6.Controls.Add(this.label7);
@@ -295,7 +295,7 @@
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel5.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel5.Controls.Add(this.pbxRedDoor);
             this.panel5.Controls.Add(this.label6);
@@ -330,7 +330,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel4.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel4.Controls.Add(this.pbxWall);
             this.panel4.Controls.Add(this.label5);
@@ -365,7 +365,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel3.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.pbxNone);
             this.panel3.Controls.Add(this.label4);
@@ -415,7 +415,6 @@
             this.pnlMaze.Name = "pnlMaze";
             this.pnlMaze.Size = new System.Drawing.Size(720, 676);
             this.pnlMaze.TabIndex = 8;
-            this.pnlMaze.Click += new System.EventHandler(this.pnlMaze_Click);
             // 
             // MazeDesignForm
             // 
