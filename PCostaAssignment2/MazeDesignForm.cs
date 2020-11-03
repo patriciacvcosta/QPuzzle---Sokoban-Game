@@ -12,7 +12,7 @@ namespace PCostaAssignment2
 {
     public partial class MazeDesignForm : Form
     {        
-        Image chosenTool;
+        PictureTypeEnum chosenPictureType;
 
         private const int SQUARE_SIDE_SIZE = 60;
         private const int INITIAL_POSITION = 50;
@@ -67,7 +67,7 @@ namespace PCostaAssignment2
             {
                 for (int j = 0; j < numberOfColumns; j++)
                 {
-                    PictureBox pictureBox = new PictureBox
+                    PCPictureBox pictureBox = new PCPictureBox
                     {
                         Size = new Size(SQUARE_SIDE_SIZE, SQUARE_SIDE_SIZE),
                         Location = new Point(xLocation, yLocation),
@@ -97,39 +97,39 @@ namespace PCostaAssignment2
 
         private void PictureBox_Click(object sender, EventArgs e)
         {
-            PictureBox pictureClicked = sender as PictureBox;
-            pictureClicked.Image = chosenTool;
+            PCPictureBox pictureClicked = sender as PCPictureBox;
+            pictureClicked.SetImage(chosenPictureType);
 
         }
 
         private void pbxNone_Click(object sender, EventArgs e)
         {
-            chosenTool = Properties.Resources.None;
+            chosenPictureType = PictureTypeEnum.None;
         }
 
         private void pbxWall_Click(object sender, EventArgs e)
         {
-            chosenTool = Properties.Resources.Wall;
+            chosenPictureType = PictureTypeEnum.Wall;
         }
 
         private void pbxRedDoor_Click(object sender, EventArgs e)
         {
-            chosenTool = Properties.Resources.RedDoor;
+            chosenPictureType = PictureTypeEnum.RedDoor;
         }
 
         private void pbxGreenDoor_Click(object sender, EventArgs e)
         {
-            chosenTool = Properties.Resources.GreenDoor;
+            chosenPictureType = PictureTypeEnum.GreenDoor;
         }
 
         private void pbxRedBox_Click(object sender, EventArgs e)
         {
-            chosenTool = Properties.Resources.RedBox;
+            chosenPictureType = PictureTypeEnum.RedBox;
         }
 
         private void pbxGreenBox_Click(object sender, EventArgs e)
         {
-            chosenTool = Properties.Resources.GreenBox;
+            chosenPictureType = PictureTypeEnum.GreenBox;
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)

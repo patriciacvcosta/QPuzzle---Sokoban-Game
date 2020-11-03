@@ -52,6 +52,10 @@
     <Compile Include="MazeDesignForm.Designer.cs">
       <DependentUpon>MazeDesignForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PCPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PictureTypeEnum.cs" />
     <Compile Include="QGameControlPanelForm.cs">
       <SubType>Form</SubType>
     </Compile>
