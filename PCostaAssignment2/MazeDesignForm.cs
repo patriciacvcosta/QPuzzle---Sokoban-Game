@@ -11,17 +11,11 @@ using System.Windows.Forms;
 namespace PCostaAssignment2
 {
     public partial class MazeDesignForm : Form
-    {
-        private readonly Image imgNone = Properties.Resources.None;
-        private readonly Image imgWall = Properties.Resources.Wall;
-        private readonly Image imgRedDoor = Properties.Resources.RedDoor;
-        private readonly Image imgGreenDoor = Properties.Resources.GreenDoor;
-        private readonly Image imgRedBox = Properties.Resources.RedBox;
-        private readonly Image imgGreenBox = Properties.Resources.GreenBox;
-
+    {        
         Image chosenTool;
-        bool isPictureChosen = false;
-        bool isMazeGenerated = false;
+
+        private const int SQUARE_SIDE_SIZE = 60;
+        private const int INITIAL_POSITION = 50;
 
 
         public MazeDesignForm()
@@ -29,6 +23,10 @@ namespace PCostaAssignment2
             InitializeComponent();
         }
 
+        private void MazeDesignForm_Load(object sender, EventArgs e)
+        {
+            pnlToolBox.Enabled = false;
+        }
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -37,16 +35,31 @@ namespace PCostaAssignment2
 
         private void btnGenerate_Click(object sender, EventArgs e)
         {
-            int xLocation = 50;
-            int yLocation = 50;
-            int numberOfRows = Convert.ToInt32(txtRows.Text);
-            int numberOfColumns = Convert.ToInt32(txtColumns.Text);
+            int xLocation = INITIAL_POSITION;
+            int yLocation = INITIAL_POSITION;
 
-            GenerateMaze(ref xLocation, ref yLocation, numberOfRows, numberOfColumns);
-            
+            try
+            {
+                int numberOfRows = Convert.ToInt32(txtRows.Text);
+                int numberOfColumns = Convert.ToInt32(txtColumns.Text);
+
+                if (numberOfRows <= 0 || numberOfColumns <= 0)
+                {
+                    throw new Exception("Non positive input.");
+                }
+
+                GenerateMaze(xLocation, yLocation, numberOfRows, numberOfColumns);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Some error occurred: " + ex.Message + "\n\nPlease inform a valid number of rows and columns before generating the maze.", "Maze Design");
+
+            }
+
         }
 
-        private void GenerateMaze(ref int xLocation, ref int yLocation, int numberOfRows, int numberOfColumns)
+        private void GenerateMaze(int xLocation, int yLocation, int numberOfRows, int numberOfColumns)
         {
             pnlMaze.Controls.Clear();
 
@@ -56,76 +69,72 @@ namespace PCostaAssignment2
                 {
                     PictureBox pictureBox = new PictureBox
                     {
-                        Size = new Size(60, 60),
+                        Size = new Size(SQUARE_SIDE_SIZE, SQUARE_SIDE_SIZE),
                         Location = new Point(xLocation, yLocation),
-                        Image = imgNone,
+                        Image = Properties.Resources.None,
                         BorderStyle = BorderStyle.FixedSingle,
-                        Name = "pictureBox" + j.ToString() + ", " + i.ToString(),
+                        Name = "pictureBox" + i.ToString() + ", " + j.ToString(),
                         SizeMode = PictureBoxSizeMode.StretchImage,
                         Cursor = Cursors.Hand
                         
                     };
 
-                    pictureBox.Click += new EventHandler(this.pictureBox_Click);
+                    pictureBox.Click += new EventHandler(PictureBox_Click);
 
                     pnlMaze.Controls.Add(pictureBox);
 
-                    yLocation += 60;
+                    xLocation += SQUARE_SIDE_SIZE;
+
                 }
 
-                xLocation += 60;
-                yLocation = 50;
+                yLocation += SQUARE_SIDE_SIZE;
+                xLocation = INITIAL_POSITION;
             }
-            isMazeGenerated = true;
+
+            pnlToolBox.Enabled = true;
+
         }
 
-        private void pictureBox_Click(object sender, EventArgs e)
+        private void PictureBox_Click(object sender, EventArgs e)
         {
-            //PictureBox pictureClicked = sender as PictureBox;
-            //MessageBox.Show(pictureClicked.Name + "clicked");
-
-            if (isMazeGenerated == true && isPictureChosen == true)
-            {
-                PictureBox pictureClicked = sender as PictureBox;
-                pictureClicked.Image = chosenTool;
-            }
+            PictureBox pictureClicked = sender as PictureBox;
+            pictureClicked.Image = chosenTool;
 
         }
 
         private void pbxNone_Click(object sender, EventArgs e)
         {
             chosenTool = Properties.Resources.None;
-            isPictureChosen = true;
         }
 
         private void pbxWall_Click(object sender, EventArgs e)
         {
             chosenTool = Properties.Resources.Wall;
-            isPictureChosen = true;
         }
 
         private void pbxRedDoor_Click(object sender, EventArgs e)
         {
             chosenTool = Properties.Resources.RedDoor;
-            isPictureChosen = true;
         }
 
         private void pbxGreenDoor_Click(object sender, EventArgs e)
         {
             chosenTool = Properties.Resources.GreenDoor;
-            isPictureChosen = true;
         }
 
         private void pbxRedBox_Click(object sender, EventArgs e)
         {
             chosenTool = Properties.Resources.RedBox;
-            isPictureChosen = true;
         }
 
         private void pbxGreenBox_Click(object sender, EventArgs e)
         {
             chosenTool = Properties.Resources.GreenBox;
-            isPictureChosen = true;
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

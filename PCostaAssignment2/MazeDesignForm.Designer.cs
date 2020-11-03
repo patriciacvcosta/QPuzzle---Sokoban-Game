@@ -38,7 +38,7 @@
             this.tsmFile = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlToolBox = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.pbxGreenBox = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -61,7 +61,7 @@
             this.pnlMaze = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.pnlToolBox.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxGreenBox)).BeginInit();
             this.panel7.SuspendLayout();
@@ -164,6 +164,7 @@
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // closeToolStripMenuItem
             // 
@@ -172,21 +173,21 @@
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
-            // panel2
+            // pnlToolBox
             // 
-            this.panel2.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.panel8);
-            this.panel2.Controls.Add(this.panel7);
-            this.panel2.Controls.Add(this.panel6);
-            this.panel2.Controls.Add(this.panel5);
-            this.panel2.Controls.Add(this.panel4);
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(0, 23);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(190, 726);
-            this.panel2.TabIndex = 7;
+            this.pnlToolBox.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.pnlToolBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlToolBox.Controls.Add(this.panel8);
+            this.pnlToolBox.Controls.Add(this.panel7);
+            this.pnlToolBox.Controls.Add(this.panel6);
+            this.pnlToolBox.Controls.Add(this.panel5);
+            this.pnlToolBox.Controls.Add(this.panel4);
+            this.pnlToolBox.Controls.Add(this.panel3);
+            this.pnlToolBox.Controls.Add(this.label3);
+            this.pnlToolBox.Location = new System.Drawing.Point(0, 23);
+            this.pnlToolBox.Name = "pnlToolBox";
+            this.pnlToolBox.Size = new System.Drawing.Size(190, 726);
+            this.pnlToolBox.TabIndex = 7;
             // 
             // panel8
             // 
@@ -421,18 +422,19 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(908, 748);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.pnlToolBox);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pnlMaze);
             this.Name = "MazeDesignForm";
             this.Text = "Design Form";
+            this.Load += new System.EventHandler(this.MazeDesignForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.pnlToolBox.ResumeLayout(false);
+            this.pnlToolBox.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxGreenBox)).EndInit();
@@ -468,7 +470,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmFile;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnlToolBox;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel7;
