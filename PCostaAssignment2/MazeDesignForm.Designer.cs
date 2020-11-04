@@ -188,6 +188,8 @@
             this.pnlToolBox.Name = "pnlToolBox";
             this.pnlToolBox.Size = new System.Drawing.Size(190, 726);
             this.pnlToolBox.TabIndex = 7;
+            this.pnlToolBox.MouseEnter += new System.EventHandler(this.pnlToolBox_MouseEnter);
+            this.pnlToolBox.MouseLeave += new System.EventHandler(this.pnlToolBox_MouseLeave);
             // 
             // panel8
             // 

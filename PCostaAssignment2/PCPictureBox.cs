@@ -11,7 +11,13 @@ namespace PCostaAssignment2
     public class PCPictureBox : PictureBox
     {
         private PictureTypeEnum pictureType;
+
+        private int pictureRow;
+        private int pictureColumn;
+
         public PictureTypeEnum PictureType { get => pictureType; set => pictureType = value; }
+        public int PictureRow { get => pictureRow; set => pictureRow = value; }
+        public int PictureColumn { get => pictureColumn; set => pictureColumn = value; }
 
         public void SetImage(PictureTypeEnum pictureType)
         {
@@ -40,7 +46,5 @@ namespace PCostaAssignment2
             }
             
         }
-
-
     }
 }
