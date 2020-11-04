@@ -1,4 +1,15 @@
-﻿using System;
+﻿/*
+ * Assignment 1
+ * Programmer: Patricia Canuto Vieira da Costa
+ * Revision History:
+ *      2020-09-28: UI designed, code written, debbuged
+ *      2020-09-29: Bug fixing, comments added, ajustments to meet standards
+ *      2020-09-30: Documentation comments added
+
+*/
+
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -256,23 +267,65 @@ namespace PCostaAssignment2
             return true;
         }
 
-        private void pnlToolBox_MouseEnter(object sender, EventArgs e)
+        private void pbxNone_MouseEnter(object sender, EventArgs e)
         {
-            foreach (var pictureBox in pnlToolBox.Controls.OfType<PictureBox>())
-            {
-                pictureBox.Size = new Size(55, 55);
-            }
-
-
-
+            pbxNone.Size = new Size(57, 57);
         }
 
-        private void pnlToolBox_MouseLeave(object sender, EventArgs e)
+        private void pbxNone_MouseLeave(object sender, EventArgs e)
         {
-            foreach (var pictureBox in pnlToolBox.Controls.OfType<PictureBox>())
-            {
-                pictureBox.Size = new Size(60, 60);
-            }
+            pbxNone.Size = new Size(60, 60);
         }
+
+        private void pbxWall_MouseEnter(object sender, EventArgs e)
+        {
+            pbxWall.Size = new Size(57, 57);
+        }
+
+        private void pbxWall_MouseLeave(object sender, EventArgs e)
+        {
+            pbxWall.Size = new Size(60, 60);
+        }
+
+        private void pbxRedDoor_MouseEnter(object sender, EventArgs e)
+        {
+            pbxRedDoor.Size = new Size(57, 57);
+        }
+
+        private void pbxRedDoor_MouseLeave(object sender, EventArgs e)
+        {
+            pbxRedDoor.Size = new Size(60, 60);
+        }
+
+        private void pbxGreenDoor_MouseEnter(object sender, EventArgs e)
+        {
+            pbxGreenDoor.Size = new Size(57, 57);
+        }
+
+        private void pbxGreenDoor_MouseLeave(object sender, EventArgs e)
+        {
+            pbxGreenDoor.Size = new Size(60, 60);
+        }
+
+        private void pbxRedBox_MouseEnter(object sender, EventArgs e)
+        {
+            pbxRedBox.Size = new Size(57, 57);
+        }
+
+        private void pbxRedBox_MouseLeave(object sender, EventArgs e)
+        {
+            pbxRedBox.Size = new Size(60, 60);
+        }
+
+        private void pbxGreenBox_MouseEnter(object sender, EventArgs e)
+        {
+            pbxGreenBox.Size = new Size(57, 57);
+        }
+
+        private void pbxGreenBox_MouseLeave(object sender, EventArgs e)
+        {
+            pbxGreenBox.Size = new Size(60, 60);
+        }
+
     }
 }

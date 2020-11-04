@@ -79,20 +79,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Agency FB", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(88, 12);
+            this.label1.Font = new System.Drawing.Font("Agency FB", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(79, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 24);
+            this.label1.Size = new System.Drawing.Size(61, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "Rows:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Agency FB", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(273, 12);
+            this.label2.Font = new System.Drawing.Font("Agency FB", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(261, 12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 24);
+            this.label2.Size = new System.Drawing.Size(81, 28);
             this.label2.TabIndex = 1;
             this.label2.Text = "Columns:";
             // 
@@ -115,6 +115,7 @@
             // btnGenerate
             // 
             this.btnGenerate.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnGenerate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGenerate.Font = new System.Drawing.Font("Agency FB", 16F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerate.Location = new System.Drawing.Point(633, 5);
             this.btnGenerate.Name = "btnGenerate";
@@ -188,8 +189,6 @@
             this.pnlToolBox.Name = "pnlToolBox";
             this.pnlToolBox.Size = new System.Drawing.Size(190, 726);
             this.pnlToolBox.TabIndex = 7;
-            this.pnlToolBox.MouseEnter += new System.EventHandler(this.pnlToolBox_MouseEnter);
-            this.pnlToolBox.MouseLeave += new System.EventHandler(this.pnlToolBox_MouseLeave);
             // 
             // panel8
             // 
@@ -214,6 +213,8 @@
             this.pbxGreenBox.TabIndex = 8;
             this.pbxGreenBox.TabStop = false;
             this.pbxGreenBox.Click += new System.EventHandler(this.pbxGreenBox_Click);
+            this.pbxGreenBox.MouseEnter += new System.EventHandler(this.pbxGreenBox_MouseEnter);
+            this.pbxGreenBox.MouseLeave += new System.EventHandler(this.pbxGreenBox_MouseLeave);
             // 
             // label9
             // 
@@ -249,6 +250,8 @@
             this.pbxRedBox.TabIndex = 7;
             this.pbxRedBox.TabStop = false;
             this.pbxRedBox.Click += new System.EventHandler(this.pbxRedBox_Click);
+            this.pbxRedBox.MouseEnter += new System.EventHandler(this.pbxRedBox_MouseEnter);
+            this.pbxRedBox.MouseLeave += new System.EventHandler(this.pbxRedBox_MouseLeave);
             // 
             // label8
             // 
@@ -284,6 +287,8 @@
             this.pbxGreenDoor.TabIndex = 6;
             this.pbxGreenDoor.TabStop = false;
             this.pbxGreenDoor.Click += new System.EventHandler(this.pbxGreenDoor_Click);
+            this.pbxGreenDoor.MouseEnter += new System.EventHandler(this.pbxGreenDoor_MouseEnter);
+            this.pbxGreenDoor.MouseLeave += new System.EventHandler(this.pbxGreenDoor_MouseLeave);
             // 
             // label7
             // 
@@ -319,6 +324,8 @@
             this.pbxRedDoor.TabIndex = 5;
             this.pbxRedDoor.TabStop = false;
             this.pbxRedDoor.Click += new System.EventHandler(this.pbxRedDoor_Click);
+            this.pbxRedDoor.MouseEnter += new System.EventHandler(this.pbxRedDoor_MouseEnter);
+            this.pbxRedDoor.MouseLeave += new System.EventHandler(this.pbxRedDoor_MouseLeave);
             // 
             // label6
             // 
@@ -354,6 +361,8 @@
             this.pbxWall.TabIndex = 4;
             this.pbxWall.TabStop = false;
             this.pbxWall.Click += new System.EventHandler(this.pbxWall_Click);
+            this.pbxWall.MouseEnter += new System.EventHandler(this.pbxWall_MouseEnter);
+            this.pbxWall.MouseLeave += new System.EventHandler(this.pbxWall_MouseLeave);
             // 
             // label5
             // 
@@ -388,6 +397,8 @@
             this.pbxNone.TabIndex = 3;
             this.pbxNone.TabStop = false;
             this.pbxNone.Click += new System.EventHandler(this.pbxNone_Click);
+            this.pbxNone.MouseEnter += new System.EventHandler(this.pbxNone_MouseEnter);
+            this.pbxNone.MouseLeave += new System.EventHandler(this.pbxNone_MouseLeave);
             // 
             // label4
             // 
@@ -473,25 +484,25 @@
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
         private System.Windows.Forms.Panel pnlToolBox;
-        private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pbxNone;
         private System.Windows.Forms.PictureBox pbxGreenBox;
         private System.Windows.Forms.PictureBox pbxRedBox;
         private System.Windows.Forms.PictureBox pbxGreenDoor;
         private System.Windows.Forms.PictureBox pbxRedDoor;
         private System.Windows.Forms.PictureBox pbxWall;
         private System.Windows.Forms.Panel pnlMaze;
+        private System.Windows.Forms.PictureBox pbxNone;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel3;
     }
 }
