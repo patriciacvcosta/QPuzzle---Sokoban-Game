@@ -1,4 +1,14 @@
-﻿using System;
+﻿/*
+ * PROG2370 - Assignment 2
+ * Programmer: Patricia Canuto Vieira da Costa
+ * Revision History:
+ *      2020-10-31: UI designed, code written, debbuged
+ *      2020-11-02: UI updates, code written, debbuged
+ *      2020-11-03: Bug fixing
+ *      2020-11-04: Bug fixing, Documentation comments added
+*/
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,6 +20,9 @@ using System.Windows.Forms;
 
 namespace PCostaAssignment2
 {
+    /// <summary>
+    /// The class responsible for making the QGame Control Panel user interface.
+    /// </summary>
     public partial class QGameControlPanelForm : Form
     {
         public QGameControlPanelForm()

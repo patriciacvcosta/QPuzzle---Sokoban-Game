@@ -8,6 +8,10 @@ using System.Windows.Forms;
 
 namespace PCostaAssignment2
 {
+    /// <summary>
+    /// A class that inherits from PictureBox, which represents a Windows picture box control for displaying and image.
+    /// It has new properties and methods needed for the QGame.
+    /// </summary>
     public class PCPictureBox : PictureBox
     {
         private PictureTypeEnum pictureType;
@@ -19,12 +23,21 @@ namespace PCostaAssignment2
         public int PictureRow { get => pictureRow; set => pictureRow = value; }
         public int PictureColumn { get => pictureColumn; set => pictureColumn = value; }
 
+        /// <summary>
+        /// Sets the image according to the picture type.
+        /// </summary>
+        /// <param name="pictureType">The type of picture to be set.</param>
         public void SetImage(PictureTypeEnum pictureType)
         {
             PictureType = pictureType;
             Image = GetImage(pictureType);
         }
 
+        /// <summary>
+        /// Gets the image according to the picture type.
+        /// </summary>
+        /// <param name="pictureType">The type of picture to be fetched from the resources.</param>
+        /// <returns>The picture image according to the type.</returns>
         private Image GetImage(PictureTypeEnum pictureType)
         {
             switch (pictureType)

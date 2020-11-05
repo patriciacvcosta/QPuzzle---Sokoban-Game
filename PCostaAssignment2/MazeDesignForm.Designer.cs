@@ -54,7 +54,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.pbxWall = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnlNone = new System.Windows.Forms.Panel();
             this.pbxNone = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -72,7 +72,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxRedDoor)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxWall)).BeginInit();
-            this.panel3.SuspendLayout();
+            this.pnlNone.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxNone)).BeginInit();
             this.SuspendLayout();
             // 
@@ -183,7 +183,7 @@
             this.pnlToolBox.Controls.Add(this.panel6);
             this.pnlToolBox.Controls.Add(this.panel5);
             this.pnlToolBox.Controls.Add(this.panel4);
-            this.pnlToolBox.Controls.Add(this.panel3);
+            this.pnlToolBox.Controls.Add(this.pnlNone);
             this.pnlToolBox.Controls.Add(this.label3);
             this.pnlToolBox.Location = new System.Drawing.Point(0, 23);
             this.pnlToolBox.Name = "pnlToolBox";
@@ -213,8 +213,6 @@
             this.pbxGreenBox.TabIndex = 8;
             this.pbxGreenBox.TabStop = false;
             this.pbxGreenBox.Click += new System.EventHandler(this.pbxGreenBox_Click);
-            this.pbxGreenBox.MouseEnter += new System.EventHandler(this.pbxGreenBox_MouseEnter);
-            this.pbxGreenBox.MouseLeave += new System.EventHandler(this.pbxGreenBox_MouseLeave);
             // 
             // label9
             // 
@@ -250,8 +248,6 @@
             this.pbxRedBox.TabIndex = 7;
             this.pbxRedBox.TabStop = false;
             this.pbxRedBox.Click += new System.EventHandler(this.pbxRedBox_Click);
-            this.pbxRedBox.MouseEnter += new System.EventHandler(this.pbxRedBox_MouseEnter);
-            this.pbxRedBox.MouseLeave += new System.EventHandler(this.pbxRedBox_MouseLeave);
             // 
             // label8
             // 
@@ -287,8 +283,6 @@
             this.pbxGreenDoor.TabIndex = 6;
             this.pbxGreenDoor.TabStop = false;
             this.pbxGreenDoor.Click += new System.EventHandler(this.pbxGreenDoor_Click);
-            this.pbxGreenDoor.MouseEnter += new System.EventHandler(this.pbxGreenDoor_MouseEnter);
-            this.pbxGreenDoor.MouseLeave += new System.EventHandler(this.pbxGreenDoor_MouseLeave);
             // 
             // label7
             // 
@@ -324,8 +318,6 @@
             this.pbxRedDoor.TabIndex = 5;
             this.pbxRedDoor.TabStop = false;
             this.pbxRedDoor.Click += new System.EventHandler(this.pbxRedDoor_Click);
-            this.pbxRedDoor.MouseEnter += new System.EventHandler(this.pbxRedDoor_MouseEnter);
-            this.pbxRedDoor.MouseLeave += new System.EventHandler(this.pbxRedDoor_MouseLeave);
             // 
             // label6
             // 
@@ -344,10 +336,12 @@
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel4.Controls.Add(this.pbxWall);
             this.panel4.Controls.Add(this.label5);
+            this.panel4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.panel4.Location = new System.Drawing.Point(14, 136);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(160, 73);
             this.panel4.TabIndex = 3;
+            this.panel4.Click += new System.EventHandler(this.pbxWall_Click);
             // 
             // pbxWall
             // 
@@ -361,8 +355,6 @@
             this.pbxWall.TabIndex = 4;
             this.pbxWall.TabStop = false;
             this.pbxWall.Click += new System.EventHandler(this.pbxWall_Click);
-            this.pbxWall.MouseEnter += new System.EventHandler(this.pbxWall_MouseEnter);
-            this.pbxWall.MouseLeave += new System.EventHandler(this.pbxWall_MouseLeave);
             // 
             // label5
             // 
@@ -375,30 +367,31 @@
             this.label5.TabIndex = 2;
             this.label5.Text = "Wall";
             // 
-            // panel3
+            // pnlNone
             // 
-            this.panel3.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.pbxNone);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Location = new System.Drawing.Point(14, 58);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(160, 73);
-            this.panel3.TabIndex = 1;
+            this.pnlNone.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.pnlNone.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlNone.Controls.Add(this.pbxNone);
+            this.pnlNone.Controls.Add(this.label4);
+            this.pnlNone.Location = new System.Drawing.Point(14, 57);
+            this.pnlNone.Name = "pnlNone";
+            this.pnlNone.Size = new System.Drawing.Size(160, 73);
+            this.pnlNone.TabIndex = 1;
+            this.pnlNone.Click += new System.EventHandler(this.pbxNone_Click);
             // 
             // pbxNone
             // 
+            this.pbxNone.BackColor = System.Drawing.Color.DarkSlateGray;
             this.pbxNone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbxNone.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxNone.Image = global::PCostaAssignment2.Properties.Resources.None;
             this.pbxNone.Location = new System.Drawing.Point(10, 3);
             this.pbxNone.Name = "pbxNone";
             this.pbxNone.Size = new System.Drawing.Size(60, 60);
+            this.pbxNone.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxNone.TabIndex = 3;
             this.pbxNone.TabStop = false;
             this.pbxNone.Click += new System.EventHandler(this.pbxNone_Click);
-            this.pbxNone.MouseEnter += new System.EventHandler(this.pbxNone_MouseEnter);
-            this.pbxNone.MouseLeave += new System.EventHandler(this.pbxNone_MouseLeave);
             // 
             // label4
             // 
@@ -463,8 +456,8 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxWall)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.pnlNone.ResumeLayout(false);
+            this.pnlNone.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxNone)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -503,6 +496,6 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel pnlNone;
     }
 }

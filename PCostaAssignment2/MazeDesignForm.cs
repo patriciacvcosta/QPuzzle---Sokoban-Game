@@ -1,13 +1,12 @@
 ﻿/*
- * Assignment 1
+ * PROG2370 - Assignment 2
  * Programmer: Patricia Canuto Vieira da Costa
  * Revision History:
- *      2020-09-28: UI designed, code written, debbuged
- *      2020-09-29: Bug fixing, comments added, ajustments to meet standards
- *      2020-09-30: Documentation comments added
-
+ *      2020-10-31: UI designed, code written, debbuged
+ *      2020-11-02: UI updates, code written, debbuged
+ *      2020-11-03: code written, Bug fixing
+ *      2020-11-04: code written, code "cleaning", Documentation comments added
 */
-
 
 using System;
 using System.Collections.Generic;
@@ -22,11 +21,16 @@ using System.Windows.Forms;
 
 namespace PCostaAssignment2
 {
+
+    /// <summary>
+    /// The class responsible for making the Maze Design user interface.
+    /// </summary>
     public partial class MazeDesignForm : Form
     {
         PictureTypeEnum chosenPictureType;
 
         private const int SQUARE_SIDE_SIZE = 60;
+        private const int SELECTED_SQUARE_SIDE_SIZE = 57;
         private const int INITIAL_POSITION = 50;
 
         int numberOfRows;
@@ -62,8 +66,7 @@ namespace PCostaAssignment2
                     throw new Exception("Non positive input.");
                 }
 
-                GenerateMaze(xLocation, yLocation, numberOfRows, numberOfColumns);
-
+                GenerateMaze(xLocation, yLocation, numberOfRows, numberOfColumns);                
             }
             catch (Exception ex)
             {
@@ -71,82 +74,6 @@ namespace PCostaAssignment2
 
             }
 
-        }
-
-        private void GenerateMaze(int xLocation, int yLocation, int numberOfRows, int numberOfColumns)
-        {
-            pnlMaze.Controls.Clear();
-
-            for (int i = 0; i < numberOfRows; i++)
-            {
-                for (int j = 0; j < numberOfColumns; j++)
-                {
-                    PCPictureBox pictureBox = new PCPictureBox
-                    {
-                        Size = new Size(SQUARE_SIDE_SIZE, SQUARE_SIDE_SIZE),
-                        Location = new Point(xLocation, yLocation),
-                        Image = Properties.Resources.None,
-                        BorderStyle = BorderStyle.FixedSingle,
-                        Name = "pictureBox" + i.ToString() + j.ToString(),
-                        SizeMode = PictureBoxSizeMode.StretchImage,
-                        Cursor = Cursors.Hand,
-                        PictureType = PictureTypeEnum.None,
-                        PictureRow = i,
-                        PictureColumn = j
-
-                    };
-
-                    pictureBox.Click += new EventHandler(PictureBox_Click);
-
-                    pnlMaze.Controls.Add(pictureBox);
-
-                    xLocation += SQUARE_SIDE_SIZE;
-
-                }
-
-                yLocation += SQUARE_SIDE_SIZE;
-                xLocation = INITIAL_POSITION;
-            }
-
-            pnlToolBox.Enabled = true;
-
-        }
-
-        private void PictureBox_Click(object sender, EventArgs e)
-        {
-            PCPictureBox pictureClicked = sender as PCPictureBox;
-            pictureClicked.SetImage(chosenPictureType);
-
-        }
-
-        private void pbxNone_Click(object sender, EventArgs e)
-        {
-            chosenPictureType = PictureTypeEnum.None;
-        }
-
-        private void pbxWall_Click(object sender, EventArgs e)
-        {
-            chosenPictureType = PictureTypeEnum.Wall;
-        }
-
-        private void pbxRedDoor_Click(object sender, EventArgs e)
-        {
-            chosenPictureType = PictureTypeEnum.RedDoor;
-        }
-
-        private void pbxGreenDoor_Click(object sender, EventArgs e)
-        {
-            chosenPictureType = PictureTypeEnum.GreenDoor;
-        }
-
-        private void pbxRedBox_Click(object sender, EventArgs e)
-        {
-            chosenPictureType = PictureTypeEnum.RedBox;
-        }
-
-        private void pbxGreenBox_Click(object sender, EventArgs e)
-        {
-            chosenPictureType = PictureTypeEnum.GreenBox;
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -186,34 +113,125 @@ namespace PCostaAssignment2
 
         }
 
-        private void CountTools()
+        
+        private void PictureBox_Click(object sender, EventArgs e)
         {
-            int wallTotal = 0;
-            int doorsTotal = 0;
-            int boxesTotal = 0;
-
-            foreach (var pictureBox in pnlMaze.Controls.OfType<PCPictureBox>())
-            {
-                if (pictureBox.PictureType == PictureTypeEnum.Wall)
-                {
-                    wallTotal++;
-                }
-                if (pictureBox.PictureType == PictureTypeEnum.GreenDoor || pictureBox.PictureType == PictureTypeEnum.RedDoor)
-                {
-                    doorsTotal++;
-                }
-                if (pictureBox.PictureType == PictureTypeEnum.GreenBox || pictureBox.PictureType == PictureTypeEnum.RedBox)
-                {
-                    boxesTotal++;
-                }
-            }
-
-            MessageBox.Show("File saved successfully: " +
-                "\n Total number of walls: " + wallTotal +
-                "\n Total number of doors: " + doorsTotal +
-                "\n Total number of boxes: " + boxesTotal, "QGame");
+            PCPictureBox pictureClicked = sender as PCPictureBox;
+            pictureClicked.SetImage(chosenPictureType);
         }
 
+        private void pbxNone_Click(object sender, EventArgs e)
+        {
+            chosenPictureType = PictureTypeEnum.None;
+            UnselectAllTools();
+            SelectTool(pbxNone);
+        }
+
+        private void pbxWall_Click(object sender, EventArgs e)
+        {
+            chosenPictureType = PictureTypeEnum.Wall;
+            UnselectAllTools();
+            SelectTool(pbxWall);
+        }
+
+        private void pbxRedDoor_Click(object sender, EventArgs e)
+        {
+            chosenPictureType = PictureTypeEnum.RedDoor;
+            UnselectAllTools();
+            SelectTool(pbxRedDoor);
+        }
+
+        private void pbxGreenDoor_Click(object sender, EventArgs e)
+        {
+            chosenPictureType = PictureTypeEnum.GreenDoor;
+            UnselectAllTools();
+            SelectTool(pbxGreenDoor);
+        }
+
+        private void pbxRedBox_Click(object sender, EventArgs e)
+        {
+            chosenPictureType = PictureTypeEnum.RedBox;
+            UnselectAllTools();
+            SelectTool(pbxRedBox);
+        }
+
+        private void pbxGreenBox_Click(object sender, EventArgs e)
+        {
+            chosenPictureType = PictureTypeEnum.GreenBox;
+            UnselectAllTools();
+            SelectTool(pbxGreenBox);
+        }
+
+        /// <summary>
+        /// Changes the PictureBox's size and border to highlight its selection.
+        /// </summary>
+        /// <param name="toolPicture">PictureBox to be highlighted</param>
+        private void SelectTool(PictureBox toolPicture)
+        {
+            toolPicture.Size = new Size(SELECTED_SQUARE_SIDE_SIZE, SELECTED_SQUARE_SIDE_SIZE);
+            toolPicture.BorderStyle = BorderStyle.Fixed3D;
+        }
+
+        /// <summary>
+        /// Reverts all PictureBox selections by re-setting border and size to the default settings.
+        /// </summary>
+        private void UnselectAllTools()
+        {
+            var pictureBoxes = pnlToolBox.Controls.OfType<Panel>().SelectMany(p => p.Controls.OfType<PictureBox>());
+            foreach (var pictureBox in pictureBoxes)
+            {
+                pictureBox.BorderStyle = BorderStyle.FixedSingle;
+                pictureBox.Size = new Size(SQUARE_SIDE_SIZE, SQUARE_SIDE_SIZE);
+            }
+        }
+
+        /// <summary>
+        /// Generates the maze.
+        /// </summary>
+        /// <param name="xPosition">The distance from the left border of the panel.</param>
+        /// <param name="yPosition">The distance from the upper border of the panel.</param>
+        /// <param name="numberOfRows">The number of rows to be generated.</param>
+        /// <param name="numberOfColumns">The number of columns to be generated.</param>
+        private void GenerateMaze(int xPosition, int yPosition, int numberOfRows, int numberOfColumns)
+        {
+            pnlMaze.Controls.Clear();
+
+            for (int i = 0; i < numberOfRows; i++)
+            {
+                for (int j = 0; j < numberOfColumns; j++)
+                {
+                    PCPictureBox pictureBox = new PCPictureBox
+                    {
+                        Size = new Size(SQUARE_SIDE_SIZE, SQUARE_SIDE_SIZE),
+                        Location = new Point(xPosition, yPosition),
+                        Image = Properties.Resources.None,
+                        BorderStyle = BorderStyle.FixedSingle,
+                        Name = "pictureBox" + i.ToString() + j.ToString(),
+                        SizeMode = PictureBoxSizeMode.StretchImage,
+                        Cursor = Cursors.Hand,
+                        PictureType = PictureTypeEnum.None,
+                        PictureRow = i,
+                        PictureColumn = j
+                    };
+
+                    pictureBox.Click += new EventHandler(PictureBox_Click);
+
+                    pnlMaze.Controls.Add(pictureBox);
+
+                    xPosition += SQUARE_SIDE_SIZE;
+                }
+
+                yPosition += SQUARE_SIDE_SIZE;
+                xPosition = INITIAL_POSITION;
+            }
+
+            pnlToolBox.Enabled = true;
+
+        }
+
+        /// <summary>
+        /// Saves the Maze's information (number of rows, number of columns, and, for each cell, row number, column number, and content) to a file.
+        /// </summary>
         private void SaveMazeInfo()
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog
@@ -248,6 +266,10 @@ namespace PCostaAssignment2
 
         }
 
+        /// <summary>
+        /// Checks if the Maze is valid (follows the game's rules)
+        /// </summary>
+        /// <returns>True if the Maze if valid, false ortherwise.</returns>
         private bool IsMazeValid()
         {
             int greenDoorCount = pnlMaze.Controls.OfType<PCPictureBox>().Count(p => p.PictureType == PictureTypeEnum.GreenDoor);
@@ -267,65 +289,21 @@ namespace PCostaAssignment2
             return true;
         }
 
-        private void pbxNone_MouseEnter(object sender, EventArgs e)
+        /// <summary>
+        /// Counts the number of tools (number of doors, wall, and boxes) used to create the maze.
+        /// </summary>
+        private void CountTools()
         {
-            pbxNone.Size = new Size(57, 57);
+            int wallTotal = pnlMaze.Controls.OfType<PCPictureBox>().Count(p => p.PictureType == PictureTypeEnum.Wall);
+            int doorsTotal = pnlMaze.Controls.OfType<PCPictureBox>().Count(p => p.PictureType == PictureTypeEnum.GreenDoor || p.PictureType == PictureTypeEnum.RedDoor);
+            int boxesTotal = pnlMaze.Controls.OfType<PCPictureBox>().Count(p => p.PictureType == PictureTypeEnum.GreenBox || p.PictureType == PictureTypeEnum.RedBox);            
+
+            MessageBox.Show("File saved successfully: " +
+                "\n Total number of walls: " + wallTotal +
+                "\n Total number of doors: " + doorsTotal +
+                "\n Total number of boxes: " + boxesTotal, "QGame");
         }
 
-        private void pbxNone_MouseLeave(object sender, EventArgs e)
-        {
-            pbxNone.Size = new Size(60, 60);
-        }
-
-        private void pbxWall_MouseEnter(object sender, EventArgs e)
-        {
-            pbxWall.Size = new Size(57, 57);
-        }
-
-        private void pbxWall_MouseLeave(object sender, EventArgs e)
-        {
-            pbxWall.Size = new Size(60, 60);
-        }
-
-        private void pbxRedDoor_MouseEnter(object sender, EventArgs e)
-        {
-            pbxRedDoor.Size = new Size(57, 57);
-        }
-
-        private void pbxRedDoor_MouseLeave(object sender, EventArgs e)
-        {
-            pbxRedDoor.Size = new Size(60, 60);
-        }
-
-        private void pbxGreenDoor_MouseEnter(object sender, EventArgs e)
-        {
-            pbxGreenDoor.Size = new Size(57, 57);
-        }
-
-        private void pbxGreenDoor_MouseLeave(object sender, EventArgs e)
-        {
-            pbxGreenDoor.Size = new Size(60, 60);
-        }
-
-        private void pbxRedBox_MouseEnter(object sender, EventArgs e)
-        {
-            pbxRedBox.Size = new Size(57, 57);
-        }
-
-        private void pbxRedBox_MouseLeave(object sender, EventArgs e)
-        {
-            pbxRedBox.Size = new Size(60, 60);
-        }
-
-        private void pbxGreenBox_MouseEnter(object sender, EventArgs e)
-        {
-            pbxGreenBox.Size = new Size(57, 57);
-        }
-
-        private void pbxGreenBox_MouseLeave(object sender, EventArgs e)
-        {
-            pbxGreenBox.Size = new Size(60, 60);
-        }
 
     }
 }
