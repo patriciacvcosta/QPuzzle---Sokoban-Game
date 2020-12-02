@@ -4,8 +4,8 @@
  * Revision History:
  *      2020-10-31: UI designed, code written, debbuged
  *      2020-11-02: UI updates, code written, debbuged
- *      2020-11-03: Bug fixing
- *      2020-11-04: Bug fixing, Documentation comments added
+ *      2020-11-03: code written, Bug fixing
+ *      2020-11-04: code written, code "cleaning", Documentation comments added
 */
 
 using System;
@@ -38,7 +38,8 @@ namespace PCostaAssignment2
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
-            //assignment3
+            GamePlayForm gamePlayForm = new GamePlayForm();
+            gamePlayForm.Show();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
