@@ -11,10 +11,12 @@ namespace PCostaAssignment2
     {
         private int row;
         private int col;
-        private int tileType;
+        private PCPictureBox tileType;
+
 
         public int Row { get => row; set => row = value; }
         public int Col { get => col; set => col = value; }
-        public int TileType { get => tileType; set => tileType = value; }
+        public PCPictureBox TileType { get => tileType; set => tileType = value; }
+
     }
 }

@@ -70,14 +70,14 @@
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.loadToolStripMenuItem.Text = "Load Game";
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
@@ -92,6 +92,7 @@
             this.btnUp.TabIndex = 12;
             this.btnUp.Text = "Up";
             this.btnUp.UseVisualStyleBackColor = false;
+            this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
             // 
             // txtRemainingBoxes
             // 
@@ -161,6 +162,7 @@
             this.btnRight.TabIndex = 16;
             this.btnRight.Text = "Right";
             this.btnRight.UseVisualStyleBackColor = false;
+            this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
             // 
             // btnLeft
             // 
@@ -173,6 +175,7 @@
             this.btnLeft.TabIndex = 15;
             this.btnLeft.Text = "Left";
             this.btnLeft.UseVisualStyleBackColor = false;
+            this.btnLeft.Click += new System.EventHandler(this.btnLeft_Click);
             // 
             // btnDown
             // 
@@ -185,6 +188,7 @@
             this.btnDown.TabIndex = 14;
             this.btnDown.Text = "Down";
             this.btnDown.UseVisualStyleBackColor = false;
+            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
             // 
             // txtNumberOfMoves
             // 
