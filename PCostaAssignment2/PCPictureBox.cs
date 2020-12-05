@@ -1,10 +1,22 @@
-﻿using System;
+﻿/*
+ * PROG2370 - Assignment 2/3
+ * Programmer: Patricia Canuto Vieira da Costa
+ * Revision History:
+ *      2020-10-31: UI designed, code written, debbuged
+ *      2020-11-02: UI updates, code written, debbuged
+ *      2020-11-03: code written, Bug fixing
+ *      2020-11-04: code written, code "cleaning", Documentation comments added
+ *      2020-12-03: code written
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace PCostaAssignment2
 {
@@ -60,9 +72,27 @@ namespace PCostaAssignment2
             
         }
 
-        //public PCPictureBox GetTileFromMaze(int row, int col)
-        //{
-            
-        //}
+        /// <summary>
+        /// Changes the PictureBox's size and border to highlight its selection.
+        /// </summary>
+        /// <param name="toolPicture">PictureBox to be highlighted</param>
+        /// <param name="squareSize">The size of the PictureBox square</param>
+        public static void SelectTool(PictureBox toolPicture, int squareSize)
+        {
+            toolPicture.Size = new Size(squareSize, squareSize);
+            toolPicture.BorderStyle = BorderStyle.Fixed3D;
+        }
+
+        /// <summary>
+        /// Reverts all PictureBox selections by re-setting border and size to the default settings.
+        /// </summary>
+        /// <param name="toolPicture">PictureBox to be highlighted</param>
+        /// <param name="squareSize">The size of the PictureBox square</param>
+        public static void UnselectTool(PictureBox toolPicture, int squareSize)
+        {
+            toolPicture.Size = new Size(squareSize, squareSize);
+            toolPicture.BorderStyle = BorderStyle.FixedSingle;
+        }
+
     }
 }

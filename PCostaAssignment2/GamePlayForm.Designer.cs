@@ -53,7 +53,7 @@
             this.tsmFile});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(951, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(949, 24);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "File";
             // 
@@ -101,6 +101,7 @@
             this.txtRemainingBoxes.Name = "txtRemainingBoxes";
             this.txtRemainingBoxes.Size = new System.Drawing.Size(56, 44);
             this.txtRemainingBoxes.TabIndex = 11;
+            this.txtRemainingBoxes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -197,16 +198,18 @@
             this.txtNumberOfMoves.Name = "txtNumberOfMoves";
             this.txtNumberOfMoves.Size = new System.Drawing.Size(56, 44);
             this.txtNumberOfMoves.TabIndex = 10;
+            this.txtNumberOfMoves.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // GamePlayForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(951, 753);
+            this.ClientSize = new System.Drawing.Size(949, 753);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pnlToolBox);
             this.Name = "GamePlayForm";
             this.Text = "GamePlayForm";
+            this.Load += new System.EventHandler(this.GamePlayForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.pnlToolBox.ResumeLayout(false);

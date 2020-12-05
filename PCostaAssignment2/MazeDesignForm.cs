@@ -124,52 +124,43 @@ namespace PCostaAssignment2
         {
             chosenPictureType = PictureTypeEnum.None;
             UnselectAllTools();
-            SelectTool(pbxNone);
+            PCPictureBox.SelectTool(pbxNone, SELECTED_SQUARE_SIDE_SIZE);
         }
 
         private void pbxWall_Click(object sender, EventArgs e)
         {
             chosenPictureType = PictureTypeEnum.Wall;
             UnselectAllTools();
-            SelectTool(pbxWall);
+            PCPictureBox.SelectTool(pbxWall, SELECTED_SQUARE_SIDE_SIZE);
         }
 
         private void pbxRedDoor_Click(object sender, EventArgs e)
         {
             chosenPictureType = PictureTypeEnum.RedDoor;
             UnselectAllTools();
-            SelectTool(pbxRedDoor);
+            PCPictureBox.SelectTool(pbxRedDoor, SELECTED_SQUARE_SIDE_SIZE);
         }
 
         private void pbxGreenDoor_Click(object sender, EventArgs e)
         {
             chosenPictureType = PictureTypeEnum.GreenDoor;
             UnselectAllTools();
-            SelectTool(pbxGreenDoor);
+            PCPictureBox.SelectTool(pbxGreenDoor, SELECTED_SQUARE_SIDE_SIZE);
         }
 
         private void pbxRedBox_Click(object sender, EventArgs e)
         {
             chosenPictureType = PictureTypeEnum.RedBox;
             UnselectAllTools();
-            SelectTool(pbxRedBox);
+            PCPictureBox.SelectTool(pbxRedBox, SELECTED_SQUARE_SIDE_SIZE);
         }
 
         private void pbxGreenBox_Click(object sender, EventArgs e)
         {
             chosenPictureType = PictureTypeEnum.GreenBox;
             UnselectAllTools();
-            SelectTool(pbxGreenBox);
-        }
-
-        /// <summary>
-        /// Changes the PictureBox's size and border to highlight its selection.
-        /// </summary>
-        /// <param name="toolPicture">PictureBox to be highlighted</param>
-        private void SelectTool(PictureBox toolPicture)
-        {
-            toolPicture.Size = new Size(SELECTED_SQUARE_SIDE_SIZE, SELECTED_SQUARE_SIDE_SIZE);
-            toolPicture.BorderStyle = BorderStyle.Fixed3D;
+            PCPictureBox.SelectTool(pbxGreenBox, SELECTED_SQUARE_SIDE_SIZE);
+            
         }
 
         /// <summary>

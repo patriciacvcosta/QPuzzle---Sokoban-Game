@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+ * PROG2370 - Assignment 2
+ * Programmer: Patricia Canuto Vieira da Costa
+ * Revision History:
+ *      2020-11-03: code written
+ *      2020-12-04: Documentation comments added
+*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
